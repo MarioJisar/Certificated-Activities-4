@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 02 - JavaScript</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+    <script>
+        function comprobarNumero() {
+            let number = document.getElementById('numero').value;
+            document.getElementById('resultado').textContent = (number % 2 === 0) ? 'Par' : 'Impar';
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Comprobar número par o impar</h1>
+    <label for="numero">Número: </label><br><br>
+    <input type="number" id="numero" name="numero" placeholder="Introduce un número"><br><br>
+    <button onclick="comprobarNumero()">Comprobar</button><br>
+    <p id="resultado"></p>
+</body>
+
+</html>

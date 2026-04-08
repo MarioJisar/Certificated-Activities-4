@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 04 - JavaScript</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+    <script>
+        function comprobarColor() {
+            let color = document.getElementById('color').value;
+
+            switch (color) {
+                case "rojo":
+                    document.getElementById('resultado').textContent = 'Color cálido';
+                    break;
+                case "azul":
+                    document.getElementById('resultado').textContent = 'Color frío';
+                    break;
+                case "verde":
+                    document.getElementById('resultado').textContent = 'Color neutro';
+                    break;
+                default:
+                    document.getElementById('resultado').textContent = 'Color no reconocido'
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Clasificar color</h1>
+    <label for="color">Color: </label><br><br>
+    <input type="text" id="color" name="color" placeholder="Introduce un color"><br><br>
+    <button onclick="comprobarColor()">Comprobar</button><br>
+    <p id="resultado"></p>
+</body>
+
+</html>

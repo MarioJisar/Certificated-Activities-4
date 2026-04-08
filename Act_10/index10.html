@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 10 - JavaScript</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+    <script>
+        function comprobarNumero() {
+            let number1 = document.getElementById('numero1').value;
+            let number2 = document.getElementById('numero2').value;
+            document.getElementById('resultado').textContent = (number1 < number2) ? `${number1} < ${number2}` : ((number1 > number2)) ? `${number1} > ${number2}` : `${number1} = ${number2}`;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Comprobar números</h1>
+    <input type="number" id="numero1" name="numero" placeholder="Introduce un número"><br><br>
+    <input type="number" id="numero2" name="numero" placeholder="Introduce un número"><br><br>
+    <button onclick="comprobarNumero()">Comprobar</button><br>
+    <p id="resultado"></p>
+</body>
+
+</html>

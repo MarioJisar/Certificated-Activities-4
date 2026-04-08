@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 13 - JavaScript</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+    <script>
+        function calcularRadioCirculoInscrito() {
+            let numero1 = +lado1.value, numero2 = +lado2.value, numero3 = +lado3.value;
+
+            resultado.innerText = numero1 + numero2 > numero3 && numero1 + numero3 > numero2 && numero2 + numero3 > numero1 ? (Math.sqrt(((numero1 + numero2 + numero3) / 2) * (((numero1 + numero2 + numero3) / 2) - numero1) * (((numero1 + numero2 + numero3) / 2) - numero2) * (((numero1 + numero2 + numero3) / 2) - numero3)) / ((numero1 + numero2 + numero3) / 2)) : "Datos no válidos";
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Radio del círculo inscrito en un triángulo</h1>
+    <input type="number" id="lado1" name="lado1" placeholder="Introduce un lado">
+    <input type="number" id="lado2" name="lado2" placeholder="Introduce un lado">
+    <input type="number" id="lado3" name="lado3" placeholder="Introduce un lado">
+    <button onclick="calcularRadioCirculoInscrito()">Calcular</button><br>
+    <p id="resultado"></p>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 21 - JavaScript</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+    <script>
+        let cadenaAuxiliar = '';
+        function mostrarTabla() {
+            for(let cont = 1; cont <= 10; cont++){
+                cadenaAuxiliar += `<b>Tabla del ${cont}</b> <br>`;
+                for(let cont2 = 1; cont2 <= 10; cont2++){
+                    cadenaAuxiliar += `${cont} x ${cont2} = ${cont*cont2} <br>`;
+                }
+                cadenaAuxiliar += "<br>"
+            resultado.innerHTML = cadenaAuxiliar;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Mostrar tablas de multiplicar</h1>
+    <button onclick="mostrarTabla()">Mostrar tablas</button><br>
+    <p id="resultado"></p>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 20 - JavaScript</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+    <script>
+        let numeroAuxiliar = null;
+
+        function addNumero() {
+            let numero = +numeroIntroducido.value;
+
+            if (isNaN(numero)) {
+                resultado.innerHTML = "Error";
+                numeroIntroducido.value = '';
+                return;
+            }
+
+            if (numero > numeroAuxiliar && numero !== 0) {
+                numeroAuxiliar = numero;
+            } else {
+                mostrarNumero();
+            }
+
+            numeroIntroducido.value = '';
+        }
+
+        function mostrarNumero() {
+            if(numeroAuxiliar === null){
+                resultado.innerHTML = "No hay números";
+            } else {
+                resultado.innerHTML = numeroAuxiliar;
+            }
+
+            numeroAuxiliar = null;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Mostrar número mayor</h1>
+    <label for="numero">Introduce un número: </label><br><br>
+    <input type="number" id="numeroIntroducido" name="numeroIntroducido" placeholder="Introduce un número"><br><br>
+    <button onclick="mostrarNumero()">Mostrar números</button><br>
+    <button onclick="addNumero()">Añadir número</button><br>
+    <p id="resultado"></p>
+</body>
+
+</html>

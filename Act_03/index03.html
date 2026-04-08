@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 03 - JavaScript</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+    <script>
+        function comprobarNumero() {
+            let grade = document.getElementById('nota').value;
+            document.getElementById('resultado').textContent = (grade <= 10 && grade >= 0) ? ((grade >= 9) ? 'Sobresaliente' : (grade >= 5) ? 'Aprobado' : 'Suspenso') : 'Valor introducido no válido';
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Comprobar nota</h1>
+    <label for="nota">Nota: </label><br><br>
+    <input type="number" id="nota" name="nota" placeholder="Introduce tu nota"><br><br>
+    <button onclick="comprobarNumero()">Comprobar</button><br>
+    <p id="resultado"></p>
+</body>
+
+</html>

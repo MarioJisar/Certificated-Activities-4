@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 14v2 - JavaScript</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+    <script>
+        let suma = 0, cont = 0;
+
+        function sumarNumeros() {
+            let valor;
+
+            do {
+                valor = Number(prompt("Introduce un número (0 para salir):"));
+
+                if (valor === 0) {
+                    resultado.textContent = `Suma final: ${suma} y media ${suma / cont}`;
+                    return;
+                }
+
+                suma += valor;
+                cont++;
+                resultado.textContent = `Suma actual: ${suma}`;
+
+            } while (true);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Mostrar sumatorio Σ</h1>
+    <label for="numero">Introduce un número: </label><br><br>
+    <!-- <input type="number" id="numero" name="numero" placeholder="Introduce un número"><br><br> -->
+    <button onclick="sumarNumeros()">Sumar</button><br>
+    <p id="resultado"></p>
+</body>
+
+</html>

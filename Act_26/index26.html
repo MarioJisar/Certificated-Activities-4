@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 25 - JavaScript</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        let jugador1 = null;
+        let jugador2 = null;
+
+        function opcion1(opcion) {
+            let opcion2 = Math.floor(Math.random() * 3);
+            jugador1 = opcion;
+            jugador2 = opcion2 === 0 ? 'Piedra' : opcion2 === 1 ? 'Papel' : 'Tijera';
+            comprobarResultado();
+        }
+
+        /* function opcion2(opcion) {
+            jugador2 = opcion;
+            comprobarResultado();
+        } */
+
+        function comprobarResultado() {
+            if (jugador1 && jugador2) {
+                let marcador = '';
+
+                if (jugador1 === jugador2) {
+                    marcador = 'Empate';
+                } else if (
+                    (jugador1 === 'Piedra' && jugador2 === 'Tijera') ||
+                    (jugador1 === 'Papel' && jugador2 === 'Piedra') ||
+                    (jugador1 === 'Tijera' && jugador2 === 'Papel')
+                ) {
+                    marcador = 'Victoria Jugador 1';
+                } else {
+                    marcador = 'Victoria Jugador 2';
+                }
+
+                resultado.textContent = `Jugador 1: ${jugador1} | CPU: ${jugador2} | Resultado: ${marcador}`;
+                jugador1 = null;
+                jugador2 = null;
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Piedra, Papel o Tijera</h1>
+
+    <h2>Jugador 1</h2>
+    <button onclick="opcion1('Piedra')">Piedra</button>
+    <button onclick="opcion1('Papel')">Papel</button>
+    <button onclick="opcion1('Tijera')">Tijera</button>
+
+    <!-- <h2>Jugador 2</h2>
+    <button onclick="opcion2('Piedra')">Piedra</button>
+    <button onclick="opcion2('Papel')">Papel</button>
+    <button onclick="opcion2('Tijera')">Tijera</button> -->
+
+    <p id="resultado"></p>
+</body>
+
+</html>

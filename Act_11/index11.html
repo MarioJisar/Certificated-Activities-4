@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 11 - JavaScript</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+    <script>
+        function calcularArea() {
+            let r = +radio.value;
+            //let r = document.getElementById('radio').value;
+            resultado.innerHTML = `${Math.PI} * ${r}<sup>2</sup> = ${Math.PI*r*r}`;
+            // document.getElementById('resultado').textContent = `${Math.PI} * ${r}<sup>2</sup> = ${Math.PI*r*r}`;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Calcular área del círculo</h1>
+    <input type="number" id="radio" name="radio" placeholder="Introduce el radio del círculo"><br><br>
+    <button onclick="calcularArea()">Calcular</button><br>
+    <p id="resultado"></p>
+</body>
+
+</html>

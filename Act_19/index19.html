@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 19 - JavaScript</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+    <script>
+        let cadenaAuxiliar = '';
+        function mostrarTabla() {
+            let numero = +numeroIntroducido.value; 
+            for(let cont = 1; cont <= 10; cont++){
+                cadenaAuxiliar += `${numero} x ${cont} = ${numero*cont} <br>`;
+            }
+            resultado.innerHTML = cadenaAuxiliar;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Mostrar tabla de multiplicar</h1>
+    <label for="numero">Introduce un número: </label><br><br>
+    <input type="number" id="numeroIntroducido" name="numeroIntroducido" placeholder="Introduce un número"><br><br>
+    <button onclick="mostrarTabla()">Mostrar tabla</button><br>
+    <p id="resultado"></p>
+</body>
+
+</html>

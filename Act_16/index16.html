@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 16 - JavaScript</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+    <script>
+        function comprobarNumero() {
+            let numero = +numeroIntroducido.value; 
+            resultado.innerText = numero > 0 ? "Número positivo" : numero < 0 ? "Número negativo" : "El número es 0";
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Comprobar número positivo, negativo ó 0</h1>
+    <label for="numero">Introduce un número: </label><br><br>
+    <input type="number" id="numeroIntroducido" name="numeroIntroducido" placeholder="Introduce un número"><br><br>
+    <button onclick="comprobarNumero()">Comprobar</button><br>
+    <p id="resultado"></p>
+</body>
+
+</html>

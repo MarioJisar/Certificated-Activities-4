@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 15 - JavaScript</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+    <script>
+        function comprobarCapicua() {
+            let numeroOriginal = +numeroIntroducido.value, numeroAuxiliar = numeroOriginal, numeroInvertido = 0;
+
+            if (isNaN(numeroOriginal) || numeroOriginal <= 0) {
+                resultado.innerText = "Número no válido";
+                return;
+            }
+
+            while (numeroOriginal > 0) {
+                let resto = numeroOriginal % 10;
+                numeroInvertido = numeroInvertido * 10 + resto;
+                numeroOriginal = Math.trunc(numeroOriginal / 10)
+            }
+            resultado.innerText = (numeroAuxiliar === numeroInvertido) ? `El número ${numeroAuxiliar} es capicúa` : `El número ${numeroAuxiliar} no es capicúa`
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Comprobar capicúa</h1>
+    <label for="numero">Introduce un número: </label><br><br>
+    <input type="number" id="numeroIntroducido" name="numeroIntroducido" placeholder="Introduce un número"><br><br>
+    <button onclick="comprobarCapicua()">Sumar</button><br>
+    <p id="resultado"></p>
+</body>
+
+</html>

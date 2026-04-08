@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 22 - JavaScript</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+    <script>
+        function calcularSemana() {
+            let numero = +numeroIntroducido.value;
+            let dia;
+
+            switch (numero) {
+                case 1: dia = "Lunes"; break;
+                case 2: dia = "Martes"; break;
+                case 3: dia = "Miércoles"; break;
+                case 4: dia = "Jueves"; break;
+                case 5: dia = "Viernes"; break;
+                case 6: dia = "Sábado"; break;
+                case 7: dia = "Domingo"; break;
+                default: dia = "Día no válido";
+            }
+
+            resultado.innerText = `${dia}`;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Día de la semana</h1>
+    <input type="number" id="numeroIntroducido" name="numeroIntroducido" placeholder="Introduce un número">
+    <button onclick="calcularSemana()">Calcular</button><br>
+    <p id="resultado"></p>
+</body>
+
+</html>

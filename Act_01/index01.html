@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 01 - JavaScript</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+    <script>
+        function comprobarEdad() {
+            let age = document.getElementById('edad').value;
+            document.getElementById('resultado').textContent = (age >= 18) ? 'Adulto' : 'Menor';
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Comprobar edad</h1>
+    <label for="edad">Edad: </label><br><br>
+    <input type="number" id="edad" name="edad" placeholder="Introduce tu edad"><br><br>
+    <button onclick="comprobarEdad()">Comprobar</button><br>
+    <p id="resultado"></p>
+</body>
+
+</html>

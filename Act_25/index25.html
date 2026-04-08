@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 25 - JavaScript</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        let jugador1 = null;
+        let jugador2 = null;
+
+        function opcion1(opcion) {
+            jugador1 = opcion;
+            comprobarResultado();
+        }
+
+        function opcion2(opcion) {
+            jugador2 = opcion;
+            comprobarResultado();
+        }
+
+        function comprobarResultado() {
+            if (jugador1 && jugador2) {
+                let marcador = '';
+
+                if (jugador1 === jugador2) {
+                    marcador = 'Empate';
+                } else if (
+                    (jugador1 === 'Piedra' && jugador2 === 'Tijera') ||
+                    (jugador1 === 'Papel' && jugador2 === 'Piedra') ||
+                    (jugador1 === 'Tijera' && jugador2 === 'Papel')
+                ) {
+                    marcador = 'Victoria Jugador 1';
+                } else {
+                    marcador = 'Victoria Jugador 2';
+                }
+
+                resultado.textContent = `Jugador 1: ${jugador1} | Jugador 2: ${jugador2} | Resultado: ${marcador}`;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Piedra, Papel o Tijera</h1>
+
+    <h2>Jugador 1</h2>
+    <button onclick="opcion1('Piedra')">Piedra</button><br>
+    <button onclick="opcion1('Papel')">Papel</button><br>
+    <button onclick="opcion1('Tijera')">Tijera</button><br>
+
+    <h2>Jugador 2</h2>
+    <button onclick="opcion2('Piedra')">Piedra</button><br>
+    <button onclick="opcion2('Papel')">Papel</button><br>
+    <button onclick="opcion2('Tijera')">Tijera</button><br>
+
+    <p id="resultado"></p>
+</body>
+
+</html>

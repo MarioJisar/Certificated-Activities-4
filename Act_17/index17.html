@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 17 - JavaScript</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+    <script>
+        function comprobarNumero() {
+            let numero = +numeroIntroducido.value, cont, contDiv = 0; 
+            if(numero > 0){
+                for(cont = 1; cont <= numero; cont++){
+                    if(numero % cont == 0){
+                        contDiv = contDiv + 1;
+                    }
+                }
+                resultado.innerText = (contDiv == 2) ? `${numero} es un número primo` : `${numero} no es un número primo`
+            }
+            resultado.innerText
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Comprobar número primo</h1>
+    <label for="numero">Introduce un número: </label><br><br>
+    <input type="number" id="numeroIntroducido" name="numeroIntroducido" placeholder="Introduce un número"><br><br>
+    <button onclick="comprobarNumero()">Comprobar</button><br>
+    <p id="resultado"></p>
+</body>
+
+</html>

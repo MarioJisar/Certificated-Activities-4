@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 27 - JavaScript</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function mostrarNumeroAleatorio() {
+            let numeroAleatorio = Math.floor(Math.random() * 999) + 1;
+            resultado.innerText = numeroAleatorio;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Número aleatorio</h1>
+    <button onclick="mostrarNumeroAleatorio()">Número aleatorio</button>
+    <p id="resultado"></p>
+</body>
+
+</html>

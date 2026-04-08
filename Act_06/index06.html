@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 06 - JavaScript</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+    <script>
+        let cadenaNumeros = ''
+        function mostrarNumeros() {
+            for (let numero = 0; numero <= 10; numero++) {
+                cadenaNumeros += numero + ' ';
+            }
+            document.getElementById('resultado').textContent = cadenaNumeros;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Mostrar cadena de númeos</h1>
+    <label for="numero">Número: </label><br><br>
+    <button onclick="mostrarNumeros()">Comprobar</button><br>
+    <p id="resultado"></p>
+</body>
+
+</html>

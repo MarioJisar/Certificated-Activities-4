@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 24 - JavaScript</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+    <script>
+        function calcularFactorial() {
+            let cadenaAuxiliar = 1, numero = +numeroIntroducido.value;
+
+            if (isNaN(numero) || numero < 0) {
+                resultado.innerHTML = "Error";
+                numeroIntroducido.value = '';
+                return;
+            }
+
+            for (let cont = numero; cont >= 1; cont--) {
+                cadenaAuxiliar *= cont;
+            }
+            resultado.innerHTML = cadenaAuxiliar;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Calcular número factorial</h1>
+    <input type="number" id="numeroIntroducido" name="numeroIntroducido" placeholder="Introduce un número">
+    <button onclick="calcularFactorial()">Calcular</button><br>
+    <p id="resultado"></p>
+</body>
+
+</html>

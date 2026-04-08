@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio Euromillon - JavaScript</title>
+    <style>
+        body {
+            text-align: center;
+            background-image: url(images/euromillonWallpaper.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-size: xx-large;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        p{
+            background-color: rgb(245, 245, 220, 0.8);
+        }
+    </style>
+    <script>
+        let cadenaAuxiliar = '';
+        function mostrarNumeroEuromillon() {
+            cadenaAuxiliar += `Números`;
+            for (let cont = 0; cont <= 4; cont++) {
+                let numeroPrincipal = Math.floor(Math.random() * 50) + 1;
+                cadenaAuxiliar += ` ${numeroPrincipal} `;
+
+            }
+
+            cadenaAuxiliar += `Estrellas`;
+            for (let cont2 = 0; cont2 <= 1; cont2++) {
+                let numeroEstrellas = Math.floor(Math.random() * 12) + 1;
+                cadenaAuxiliar += ` ${numeroEstrellas} `;
+            }
+
+            resultado.innerHTML = cadenaAuxiliar;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Euromillon</h1>
+    <button onclick="mostrarNumeroEuromillon()">Generar combinación</button><br>
+    <p id="resultado"></p>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio Lotería Primitiva - JavaScript</title>
+    <link rel="icon" href="images/primitivaIcon.png" type="image/x-icon">
+
+    <style>
+        body {
+            text-align: center;
+            background-image: url(images/primitivaWalpaper.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-size: xx-large;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        h1,
+        button {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(7, 132, 64);
+        }
+
+        button {
+            font-size: xx-large;
+        }
+
+        p {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: red;
+            border: 2px solid red;
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+    </style>
+
+    <script>
+        let cadenaAuxiliar = '';
+        function mostrarNumeroPrimitiva() {
+            cadenaAuxiliar = '';
+            let numeroPrincipal1, numeroPrincipal2, numeroPrincipal3, numeroPrincipal4, numeroPrincipal5, numeroPrincipal6;
+            let numeroReintergo;
+
+            numeroPrincipal1 = Math.floor(Math.random() * 49) + 1;
+
+            do { numeroPrincipal2 = Math.floor(Math.random() * 49) + 1; } while (numeroPrincipal2 === numeroPrincipal1);
+            do { numeroPrincipal3 = Math.floor(Math.random() * 49) + 1; } while (numeroPrincipal3 === numeroPrincipal1 || numeroPrincipal3 === numeroPrincipal2);
+            do { numeroPrincipal4 = Math.floor(Math.random() * 49) + 1; } while (numeroPrincipal4 === numeroPrincipal1 || numeroPrincipal4 === numeroPrincipal2 || numeroPrincipal4 === numeroPrincipal3);
+            do { numeroPrincipal5 = Math.floor(Math.random() * 49) + 1; } while (numeroPrincipal5 === numeroPrincipal1 || numeroPrincipal5 === numeroPrincipal2 || numeroPrincipal5 === numeroPrincipal3 || numeroPrincipal5 === numeroPrincipal4);
+            do { numeroPrincipal6 = Math.floor(Math.random() * 49) + 1; } while (numeroPrincipal6 === numeroPrincipal1 || numeroPrincipal6 === numeroPrincipal2 || numeroPrincipal6 === numeroPrincipal3 || numeroPrincipal6 === numeroPrincipal4 || numeroPrincipal6 === numeroPrincipal5);
+
+            numeroReintergo = Math.floor(Math.random() * 10);
+
+            cadenaAuxiliar += `Números: [${numeroPrincipal1}] [${numeroPrincipal2}] [${numeroPrincipal3}] [${numeroPrincipal4}] [${numeroPrincipal5}] [${numeroPrincipal6}] | `;
+            cadenaAuxiliar += `Reintegro: [${numeroReintergo}] `;
+
+            resultado.innerHTML = cadenaAuxiliar;
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>LOTERÍA PRIMITIVA</h1>
+    <button onclick="mostrarNumeroPrimitiva()">GENERAR COMBINACIÓN</button><br>
+    <p id="resultado">Números: [?] [?] [?] [?] [?] [?] | Reintegro: [?]</p>
+</body>
+
+</html>

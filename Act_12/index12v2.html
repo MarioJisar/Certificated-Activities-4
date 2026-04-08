@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 12 - JavaScript</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+    <script>
+        function calcularOperacion() {
+            let number1 = +numero1.value, number2 = +numero2.value;
+            let operator = String(operador.value);
+            let result;
+
+            if(operator === "/" && number2 == 0) {result.innerText = "Error"; return}
+
+            resultado.innerText = operator == '+' ? numero1 + numero2 : operator == '-' ? numero1 - numero2 : operator == '*' ? numero1 * numero2 : numero1 / numero2; 
+
+            /*switch (operator) {
+                case '+': result = number1 + number2; break;
+                case '-': result = number1 - number2; break;
+                case '*': result = number1 * number2; break;
+                case '/': result = number2 != 0 ? number1 / number2 : 'Error: división entre 0'; break;
+                default: result = 'Operador no válido';
+            }
+
+            resultado.innerText = `${number1} ${operator} ${number2} = ${result}`;*/
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Calculadora básica</h1>
+    <input type="number" id="numero1" name="numero1" placeholder="Introduce un número">
+    <select id="operador">
+        <option value='+'>+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="number" id="numero2" name="numero2" placeholder="Introduce un número">
+    <button onclick="calcularOperacion()">Calcular</button><br>
+    <p id="resultado"></p>
+</body>
+
+</html>
