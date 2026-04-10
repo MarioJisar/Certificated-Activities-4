@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 49 - JavaScript</title>
+</head>
+
+<body>
+    <h1>Bebidas</h1>
+    <p id="resultado"></p>
+
+    <script>
+        let cadenaBebidas = "";
+        let bebidas = ["Agua", "Refresco", "Cerveza", "Leche", "Vino", "Zumo", "Limonada"];
+
+        cadenaBebidas += `<b>Array original: <br></b>`;
+        for (let cont = 0; cont < bebidas.length; cont++) {
+            cadenaBebidas += `[${cont}] ${bebidas[cont]} <br>`;
+        }
+        
+        cadenaBebidas += "<br>";
+        bebidas.splice(3, 0, "Vermut", "Sidra", "Mosto");
+        cadenaBebidas += `Añadido: ${bebidas.slice(3, 6)}`
+        cadenaBebidas += "<br>";
+
+        cadenaBebidas += "<br>";
+        cadenaBebidas += `<b>Array actualizado</b><br>`;
+        
+        for (let cont = 0; cont < bebidas.length; cont++) {
+            cadenaBebidas += `[${cont}] ${bebidas[cont]} <br>`;
+        }
+
+        document.getElementById("resultado").innerHTML = cadenaBebidas;
+    </script>
+</body>
+
+</html>

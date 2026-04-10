@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 39 - JavaScript</title>
+</head>
+
+<body>
+    <h1>Bebidas</h1>
+    <p id="resultado"></p>
+
+    <script>
+        let cadenaBebidas = "";
+        let bebidas = ["Agua", "Refresco", "Cerveza", "Leche", "Vino", "Zumo"];
+
+        bebidas[bebidas.length] = "Limonada";
+
+        let temp = bebidas[2];
+        bebidas[2] = bebidas[6] + " ↷";
+        bebidas[6] = temp + " ⤻";
+
+        for (let cont = 0; cont < bebidas.length; cont++) {
+            cadenaBebidas += `[${cont}] ${bebidas[cont]} <br>`;
+        }
+
+        document.getElementById("resultado").innerHTML = cadenaBebidas;
+    </script>
+</body>
+
+</html>

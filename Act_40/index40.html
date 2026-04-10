@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 40 - JavaScript</title>
+</head>
+
+<body>
+    <h1>Bebidas</h1>
+    <h2>Valor 3 por valor 6</h2>
+    <p id="resultado"></p>
+
+    <script>
+        let cadenaBebidas = "";
+        let bebidas = ["Agua", "Refresco", "Cerveza", "Leche", "Vino", "Zumo"];
+
+        bebidas[bebidas.length] = "Limonada";
+
+        for (let cont = 0; cont < bebidas.length; cont++) {
+            cadenaBebidas += `[${cont}] ${bebidas[cont]} <br>`;
+        }
+
+        cadenaBebidas += "<br>";
+
+        [bebidas[3], bebidas[6]] = [bebidas[6], bebidas[3]];
+
+        for (let cont = 0; cont < bebidas.length; cont++) {
+            cadenaBebidas += `[${cont}] ${bebidas[cont]} <br>`;
+        }
+
+        document.getElementById("resultado").innerHTML = cadenaBebidas;
+    </script>
+</body>
+
+</html>

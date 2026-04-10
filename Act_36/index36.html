@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 36 - JavaScript</title>
+</head>
+
+<body>
+    <h1>Bebidas<button onclick="mostrarLista()">Mostrar</button></h1>
+    <p id="resultado"></p>
+
+    <script>
+        function mostrarLista() {
+            let cadenaBebidas = "";
+            let bebidas = ["Agua", "Refresco", "Cerveza", "Leche", "Vino", "Zumo"];
+            for (let cont = bebidas.length - 1; cont >= 0; cont--) {
+                cadenaBebidas += bebidas[cont] + "<br>";
+            }
+            document.getElementById("resultado").innerHTML = cadenaBebidas
+        }
+    </script>
+</body>
+
+</html>

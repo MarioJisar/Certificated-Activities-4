@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 37 Lotería Primitiva - JavaScript</title>
+    <link rel="icon" href="images/primitivaIcon.png" type="image/x-icon">
+
+    <style>
+        body {
+            text-align: center;
+            background-image: url(images/primitivaWalpaper.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-size: xx-large;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        h1,
+        button {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(7, 132, 64);
+        }
+
+        button {
+            font-size: xx-large;
+        }
+
+        p {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: red;
+            border: 2px solid red;
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+    </style>
+
+    <script>
+        let cadenaAuxiliar = '';
+        function mostrarNumeroPrimitiva() {
+            cadenaAuxiliar = '';
+            let arrayNumeros = [];
+            let numeroReintergo;
+            let i = 0;
+
+            while (i < 6) {
+                let n = Math.floor(Math.random() * 49) + 1;
+                let repetido = false;
+
+                for (let j = 0; j < i; j++) {
+                    if (arrayNumeros[j] === n) {
+                        repetido = true;
+                        break;
+                    }
+                }
+
+
+                if (!repetido) {
+                    arrayNumeros[i] = n;
+                    i++;
+                }
+            }
+            // arrayNumeros[0] = Math.floor(Math.random() * 49) + 1;
+
+            // do { arrayNumeros[1] = Math.floor(Math.random() * 49) + 1; } while (arrayNumeros[1] === arrayNumeros[0]);
+            // do { arrayNumeros[2] = Math.floor(Math.random() * 49) + 1; } while (arrayNumeros[2] === arrayNumeros[0] || arrayNumeros[2] === arrayNumeros[1]);
+            // do { arrayNumeros[3] = Math.floor(Math.random() * 49) + 1; } while (arrayNumeros[3] === arrayNumeros[0] || arrayNumeros[3] === arrayNumeros[1] || arrayNumeros[3] === arrayNumeros[2]);
+            // do { arrayNumeros[4] = Math.floor(Math.random() * 49) + 1; } while (arrayNumeros[4] === arrayNumeros[0] || arrayNumeros[4] === arrayNumeros[1] || arrayNumeros[4] === arrayNumeros[2] || arrayNumeros[4] === arrayNumeros[3]);
+            // do { arrayNumeros[5] = Math.floor(Math.random() * 49) + 1; } while (arrayNumeros[5] === arrayNumeros[0] || arrayNumeros[5] === arrayNumeros[1] || arrayNumeros[5] === arrayNumeros[2] || arrayNumeros[5] === arrayNumeros[3] || arrayNumeros[5] === arrayNumeros[4]);
+
+            numeroReintergo = Math.floor(Math.random() * 10);
+
+            cadenaAuxiliar += `Números: [${arrayNumeros[0]}] [${arrayNumeros[1]}] [${arrayNumeros[2]}] [${arrayNumeros[3]}] [${arrayNumeros[4]}] [${arrayNumeros[5]}] | `;
+            cadenaAuxiliar += `Reintegro: [${numeroReintergo}] `;
+
+            resultado.innerHTML = cadenaAuxiliar;
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>LOTERÍA PRIMITIVA</h1>
+    <button onclick="mostrarNumeroPrimitiva()">GENERAR COMBINACIÓN</button><br>
+    <p id="resultado">Números: [?] [?] [?] [?] [?] [?] | Reintegro: [?]</p>
+</body>
+
+</html>
