@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 55 - JavaScript</title>
+</head>
+
+<body>
+    <h1>Bebidas</h1>
+    <p id="resultado"></p>
+
+    <script>
+        let cadenaBebidas = "";
+        let bebidas = ["Agua", "Refresco", "Cerveza", "Leche", "Vino", "Zumo", "Limonada"];
+
+        cadenaBebidas += `<b>Array original:</b> <br>`;
+        for (let cont = 0; cont < bebidas.length; cont++) {
+            cadenaBebidas += `[${cont}] ${bebidas[cont]} <br>`;
+        }
+
+        cadenaBebidas += "<br>";
+        let valorEncontrado = bebidas.filter(bebida => bebida != "Vino");
+        let valorEliminado = bebidas.filter(bebida => bebida == "Vino");
+        
+        cadenaBebidas += `<b>Elemento eliminado:</b> ${valorEliminado}<br>`;
+        cadenaBebidas += "<br>";
+
+        cadenaBebidas += `<b>Array actualizado (sin huecos y reorganizado): <br></b>`;
+        for (let cont = 0; cont < valorEncontrado.length; cont++) {
+            cadenaBebidas += `[${cont}] ${valorEncontrado[cont]} <br>`;
+        }
+
+        document.getElementById("resultado").innerHTML = cadenaBebidas;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 57 Gestión de CEOs - JavaScript</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Gestión de CEOs</h1>
+    <button onclick="mostrar()">mostrar()</button>
+    <button onclick="shift()">shift()</button>
+    <button onclick="unshift()">unshift()</button>
+    <button onclick="pop()">pop()</button>
+    <button onclick="push()">push()</button>
+    <button onclick="deleted()">deleted()</button>
+    <button onclick="splice()">splice()</button>
+    <button onclick="indexOf()">indexOf()</button>
+    <button onclick="filter()">filter()</button>
+    <p id="resultado"></p>
+
+    <script>
+        let cadenaVacia = "";
+        let arrayCeo = ["Sam Altman", "Mark Zuckerberg", "Elon Musk", "Sundar Pichai", "Sarya Nadella", "Tim Cook"];
+
+        function mostrar() {
+            for (let cont = 0; cont < arrayCeo.length; cont++) {
+                cadenaVacia += `[${cont}] ${arrayCeo[cont]} <br>`;
+            }
+            document.getElementById("resultado").innerHTML = cadenaVacia;
+
+            cadenaVacia = "";
+        }
+
+        function shift() {
+            let valorEliminado = arrayCeo.shift();
+
+            for (let cont = 0; cont < arrayCeo.length; cont++) {
+                cadenaVacia += `[${cont}] ${arrayCeo[cont]} <br>`;
+            }
+
+            document.getElementById("resultado").innerHTML = cadenaVacia;
+
+            cadenaVacia = "";
+        }
+
+        function unshift() {
+            let valorEliminado = arrayCeo.unshift("Nuevo CEO (Inicio)");
+
+            for (let cont = 0; cont < arrayCeo.length; cont++) {
+                cadenaVacia += `[${cont}] ${arrayCeo[cont]} <br>`;
+            }
+
+            document.getElementById("resultado").innerHTML = cadenaVacia;
+
+            cadenaVacia = "";
+        }
+
+        function pop() {
+            let valorEliminado = arrayCeo.pop();
+
+            for (let cont = 0; cont < arrayCeo.length; cont++) {
+                cadenaVacia += `[${cont}] ${arrayCeo[cont]} <br>`;
+            }
+
+            document.getElementById("resultado").innerHTML = cadenaVacia;
+
+            cadenaVacia = "";
+        }
+
+        function push() {
+            let valorEliminado = arrayCeo.push("Nuevo CEO (Final)");
+
+            for (let cont = 0; cont < arrayCeo.length; cont++) {
+                cadenaVacia += `[${cont}] ${arrayCeo[cont]} <br>`;
+            }
+
+            document.getElementById("resultado").innerHTML = cadenaVacia;
+
+            cadenaVacia = "";
+        }
+
+        function deleted() {
+            let valorEncontrado = prompt("Elimina un item por índice");
+
+            let valorEliminado = delete (arrayCeo[valorEncontrado]);
+
+            for (let cont = 0; cont < arrayCeo.length; cont++) {
+                cadenaVacia += `[${cont}] ${arrayCeo[cont]} <br>`;
+            }
+
+            document.getElementById("resultado").innerHTML = cadenaVacia;
+
+            cadenaVacia = "";
+        }
+
+        function splice() {
+            let valorEncontrado = prompt("Elimina un item por índice");
+
+            cadenaVacia += "<br>";
+            let valorEliminado = arrayCeo.splice(valorEncontrado, 1);
+
+            for (let cont = 0; cont < arrayCeo.length; cont++) {
+                cadenaVacia += `[${cont}] ${arrayCeo[cont]} <br>`;
+            }
+
+            document.getElementById("resultado").innerHTML = cadenaVacia;
+
+            cadenaVacia = "";
+        }
+
+        function indexOf() {
+            let valorEncontrado = prompt("Búsqueda de un item por índice");
+            let valorABuscar = arrayCeo.indexOf(arrayCeo[valorEncontrado]);
+
+            cadenaVacia += `[${valorEncontrado}] ${arrayCeo[valorABuscar]}`;
+            // for (let cont = 0; cont < arrayCeo.length; cont++) {
+            //     cadenaVacia += `[${cont}] ${arrayCeo[cont]} <br>`;
+            // }
+
+            document.getElementById("resultado").innerHTML = cadenaVacia;
+
+            cadenaVacia = "";
+        }
+
+        function filter() {
+            let valorEncontrado = prompt("Elimina un item");
+
+            let nuevoArray = arrayCeo.filter(ceo => ceo.toLowerCase() !== valorEncontrado.toLowerCase());
+
+            cadenaVacia += `Valor introducido: "${valorEncontrado}"<br>`;
+
+            for (let cont = 0; cont < nuevoArray.length; cont++) {
+                cadenaVacia += `[${cont}] ${nuevoArray[cont]} <br>`;
+            }
+
+            document.getElementById("resultado").innerHTML = cadenaVacia;
+
+            cadenaVacia = "";
+        }
+    </script>
+</body>
+
+</html>

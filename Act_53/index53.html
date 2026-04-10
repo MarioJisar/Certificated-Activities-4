@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 53 - JavaScript</title>
+</head>
+
+<body>
+    <h1>Bebidas</h1>
+    <p id="resultado"></p>
+
+    <script>
+        let cadenaBebidas = "";
+        let bebidas = ["Agua", "Refresco", "Cerveza", "Leche", "Vino", "Zumo", "Limonada"];
+
+        cadenaBebidas += `<b>Array original:</b> <br>`;
+        for (let cont = 0; cont < bebidas.length; cont++) {
+            cadenaBebidas += `[${cont}] ${bebidas[cont]} <br>`;
+        }
+
+        cadenaBebidas += "<br>";
+        let valorEncontrado = prompt("Agua, Refresco, Cerveza, Leche, Vino, Zumo, Limonada");
+        let valorABuscar = bebidas.indexOf(valorEncontrado);
+
+        cadenaBebidas += `<b>Elemento a buscar:</b> ${valorEncontrado}<br>`;
+        cadenaBebidas += "<br>";
+        cadenaBebidas += `<b>Resultado indexOf:</b> ${valorABuscar}<br>`;
+        cadenaBebidas += "<br>";
+        
+        cadenaBebidas += valorABuscar !== -1 ? bebidas.splice(valorABuscar, 1) && `<b>¡¡¡Elemento encontrado!!!</b>` : `<b>¡¡¡Elemento NO encontrado!!! :(</b>`;
+        cadenaBebidas += "<br>";
+        // cadenaBebidas += "<br>";
+        // cadenaBebidas += `<b>Elemento a buscar: ${"Vermut"}</b><br>`;
+        // cadenaBebidas += "<br>";
+        // cadenaBebidas += bebidas[5] === "Vermut" ? `<b>¡¡¡Elemento encontrado!!!</b>` : `<b>¡¡¡Elemento NO encontrado!!! :(</b>`;
+        cadenaBebidas += "<br>";
+        cadenaBebidas += `<b>Resultado eliminado:</b> ${valorEncontrado} <br>`;
+        cadenaBebidas += "<br>";
+        cadenaBebidas += `<b>Array actualizado (sin huecos y reorganizado): <br></b>`;
+        for (let cont = 0; cont < bebidas.length; cont++) {
+            cadenaBebidas += `[${cont}] ${bebidas[cont]} <br>`;
+        }
+
+        document.getElementById("resultado").innerHTML = cadenaBebidas;
+    </script>
+</body>
+
+</html>
