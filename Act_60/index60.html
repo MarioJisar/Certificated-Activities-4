@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 60 - JavaScript</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Comprobar palíndromo</h1>
+    <input type="text" id="palabra">
+    <button onclick="comprobar()">Comprobar</button>
+    <p id="resultado"></p>
+
+    <script>
+        function comprobar() {
+            let palabra = document.getElementById("palabra").value.toLowerCase();
+            let esPalindromo = true;
+
+            for (let cont = 0; cont < palabra.length / 2; cont++) {
+                if (palabra[cont] !== palabra[palabra.length - 1 - cont]) {
+                    esPalindromo = false;
+                }
+            }
+
+            let resultado = document.getElementById("resultado");
+
+            if (esPalindromo && palabra != "") {
+                resultado.innerHTML = "Es un palíndromo";
+            } else {
+                resultado.innerHTML = "No es un palíndromo";
+            }
+            palabra = "";
+        }
+    </script>
+</body>
+
+</html>

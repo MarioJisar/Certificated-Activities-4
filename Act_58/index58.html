@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 58 - JavaScript</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        button {
+            height: 50px;
+            width: 50px;
+            padding: 10px;
+            margin: 3px;
+            font-size: 24px;
+        }
+
+        p {
+            height: 30px;
+            width: 210px;
+            margin: 20px auto;
+            padding: 10px;
+            border: 1px solid rgb(110, 110, 110, 0.8);
+            border-radius: 5px;
+            text-align: right;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calculadora</h1>
+    <p id="resultado"></p>
+    <div>
+        <button value="7" onclick="agregar('7')">7</button>
+        <button value="8" onclick="agregar('8')">8</button>
+        <button value="9" onclick="agregar('9')">9</button>
+        <button value="/" onclick="agregar('/')">÷</button>
+    </div>
+    <div>
+        <button value="4" onclick="agregar('4')">4</button>
+        <button value="5" onclick="agregar('5')">5</button>
+        <button value="6" onclick="agregar('6')">6</button>
+        <button value="*" onclick="agregar('*')">x</button>
+    </div>
+    <div>
+        <button value="1" onclick="agregar('1')">1</button>
+        <button value="2" onclick="agregar('2')">2</button>
+        <button value="3" onclick="agregar('3')">3</button>
+        <button value="-" onclick="agregar('-')">-</button>
+    </div>
+    <div>
+        <button value="0" onclick="agregar('0')">0</button>
+        <button value="C" onclick="agregar('C')">C</button>
+        <button value="=" onclick="agregar('=')">=</button>
+        <button value="+" onclick="agregar('+')">+</button>
+    </div>
+
+    <script>
+        let num1 = "";
+        let num2 = "";
+        let operador = "";
+        // let solucion = "";
+
+        function agregar(valor) {
+            switch (valor) {
+                case "0":
+                case "1":
+                case "2":
+                case "3":
+                case "4":
+                case "5":
+                case "6":
+                case "7":
+                case "8":
+                case "9":
+                    if (operador == "") {
+                        num1 += valor;
+                    } else {
+                        num2 += valor;
+                    }
+                    // resultado.innerHTML = num1 + operador + num2;
+                    break;
+
+                case "+":
+                case "-":
+                case "*":
+                case "/":
+                    operador = valor;
+                    // resultado.innerHTML = num1 + operador + num2;
+                    break;
+
+                case "=":
+                    calcular();
+                    // resultado.innerHTML = solucion;
+                    break;
+
+                case "C":
+                    borrar();
+                    // resultado.innerHTML = "";
+                    break;
+                }
+                resultado.innerHTML = num1 + operador + num2;
+        }
+
+        function calcular() {
+            let n1 = +num1;
+            let n2 = +num2;
+
+            switch (operador) {
+                case "+":
+                    // solucion = num1 + num2;
+                    // num1 = num1 + num2;
+                    num1 = n1 + n2;
+                    break;
+                case "-":
+                    // solucion = num1 - num2;
+                    // num1 = num1 - num2;
+                    num1 = n1 - n2;
+                    break;
+                case "*":
+                    // solucion = num1 * num2;
+                    // num1 = num1 * num2;
+                    num1 = n1 * n2;
+                    break;
+                case "/":
+                    // solucion = num1 / num2;
+                    // num1 = num1 / num2;
+                    num1 = n1 / n2;
+                    break;
+            }
+            num2 = "";
+            operador = "";
+        }
+
+        function borrar() {
+            num1 = "";
+            num2 = "";
+            operador = "";
+            // solucion = "";
+        }
+
+    //         function agregar(valor) {
+    //     if (valor === "C") {
+    //         expresion = "";
+    //     } else if (valor === "=") {
+    //         try {
+    //             expresion = eval(expresion).toString();
+    //         } catch {
+    //             expresion = "Error";
+    //         }
+    //     } else {
+    //         expresion += valor;
+    //     }
+
+    //     resultado.innerHTML = expresion;
+    // }
+    </script>
+</body>
+
+</html>
