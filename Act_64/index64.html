@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 64 - JavaScript</title>
+    <style>
+        button {
+            display: block;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Fecha y hora actual</h1>
+    <p id="saludo"></p>
+    <p id="mensajeFecha"></p>
+    <p id="mensajeHora"></p>
+    <button onclick="mostrar()">¿Qué fecha y hora es?</button>
+    <button onclick="salir()">Salir</button>
+    <p id="despedida"></p>
+
+    <script>
+        let saludo = document.getElementById("saludo");
+        let mensajeFecha = document.getElementById("mensajeFecha");
+        let mensajeHora = document.getElementById("mensajeHora");
+        function actualizaReloj() {
+            const fecha = new Date();
+
+            let hora = fecha.getHours();
+            let minutos = fecha.getMinutes();
+            let segundos = fecha.getSeconds();
+            let dia = fecha.getDate();
+            let diaSemana = fecha.getDay();
+            let mes = fecha.getMonth();
+            let year = fecha.getFullYear();
+            let mensaje = "";
+
+            let arraySemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+            let arrayMes = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+            if (hora < 10) hora = "0" + hora;
+            if (minutos < 10) minutos = "0" + minutos;
+            if (segundos < 10) segundos = "0" + segundos;
+            mensaje = hora < 12 ? "¡Buenos días!" : hora < 21 ? "¡Buenas tardes!" : "¡Buenas noches!";
+
+            saludo.innerHTML = `${mensaje}`;
+            mensajeFecha.innerHTML = `Fecha: ${arraySemana[diaSemana]}, ${dia} de ${arrayMes[mes]} de ${year}`;
+            mensajeHora.innerHTML = `Hora actual: ${hora}:${minutos}:${segundos}`;
+        }
+
+
+        function mostrar() {
+            alert(`${mensajeFecha.innerHTML}\n${mensajeHora.innerHTML}`);
+        }
+
+        function salir() {
+            despedida.innerHTML = "¡Hasta la próxima, Usuario!";
+        }
+
+        window.onload = function () {
+            // resultado = document.getElementById("resultado");
+            console.log("Página cargada correctamente.");
+            actualizaReloj();
+            mostrar();
+            setInterval(actualizaReloj, 1000);
+        };
+
+    </script>
+</body>
+
+</html>

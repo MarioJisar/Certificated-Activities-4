@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 62 - JavaScript</title>
+    <!-- <style>
+        body {
+            text-align: center;
+        }
+    </style> -->
+</head>
+
+<body>
+    <!-- <h1>Date</h1> -->
+    <p id="resultado"></p>
+
+    <script>
+        function actualizaReloj() {
+
+            const fecha = new Date();
+
+            let hora = fecha.getHours();
+            let minutos = fecha.getMinutes();
+            let segundos = fecha.getSeconds();
+
+            // if (hora < 10) hora = "0" + hora;
+            // if (minutos < 10) minutos = "0" + minutos;
+            // if (segundos < 10) segundos = "0" + segundos;
+
+            // console.log("Hora:", hora);
+            // console.log("Minutos:", minutos);
+            // console.log("Segundos:", segundos);
+            // console.log("Hora completa:", hora + ":" + minutos + ":" + segundos);
+            console.log(hora + ":" + minutos + ":" + segundos);
+        }
+
+        window.onload = function () {
+            setInterval(actualizaReloj, 1000);
+        };
+    </script>
+</body>
+
+</html>
