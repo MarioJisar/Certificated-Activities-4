@@ -1,0 +1,68 @@
+body {
+  background-image: url(media/EJERCICIO_45_ACTIVAR_DESACTIVAR_AUDIO_avengers_doomsday.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  padding: 60px;
+}
+
+h2 {
+  padding: 80px;
+}
+
+h1,
+span {
+  color: #f01a24;
+}
+
+h2,
+p {
+  color: #f9fdfe;
+}
+
+section {
+  padding: 20px;
+  text-align: justify;
+  margin-left: 25%;
+  margin-right: 25%;
+  color: #f9fdfe;
+}
+
+img {
+  height: 250px;
+}
+
+#trailers {
+  margin-top: 400px;
+}
+
+#trailers,
+#imagenes {
+  display: flex;
+}
+
+#imagenes div,
+#trailers div {
+  margin: auto;
+}
+
+button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 230px;
+  background-color: #f01a24;
+  color: #f9fdfe;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #680b0f;
+}

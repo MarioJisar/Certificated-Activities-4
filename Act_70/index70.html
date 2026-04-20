@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="@mjs" />
+    <title>Ejercicio 70 - JavaScript</title>
+    <style>
+        body{
+            margin: 20px;
+        }
+        p{
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Mini Sudoku 4x4</h1>
+    <h2>Matriz inicial</h2>
+    <p id="matrizInicial"></p>
+    <h2>Huecos</h2>
+    <p id="huecos"></p>
+    <h2>Matriz final</h2>
+    <p id=" matrizFinal"></p>
+
+    <script>
+        const matrizInicial = [
+            [1, 0, 3, 4],
+            [3, 4, 0, 2],
+            [2, 1, 4, 0],
+            [0, 3, 2, 1],
+        ];
+
+        let cadenaMatrizInicial = "";
+        for (let cont1 = 0; cont1 < matrizInicial.length; cont1++) {
+            for (let cont2 = 0; cont2 < matrizInicial[cont1].length; cont2++) {
+                cadenaMatrizInicial += `${matrizInicial[cont1][cont2]} `;
+            }
+            cadenaMatrizInicial += `<br>`;
+        }
+        document.getElementById("matrizInicial").innerHTML = cadenaMatrizInicial;
+
+        let cadenaHueco = "";
+
+        for (let cont1 = 0; cont1 < matrizInicial.length; cont1++) {
+            for (let cont2 = 0; cont2 < matrizInicial[cont1].length; cont2++) {
+                if (matrizInicial[cont1][cont2] == 0) {
+                    cadenaHueco += `Fila ${cont1}, Col ${cont2} <br>`;
+                }
+            }
+        }
+        document.getElementById("huecos").innerHTML = cadenaHueco;
+        
+        let cadenaMatrizFinal = "";
+        
+        for (let cont1 = 0; cont1 < matrizInicial.length; cont1++) {
+            for (let cont2 = 0; cont2 < matrizInicial[cont1].length; cont2++) {
+                if (matrizInicial[cont1][cont2] == 0) {
+                    
+                }
+            }
+        }
+        document.getElementById("huecos").innerHTML = cadenaHueco;
+        </script>
+</body>
+
+</html>
