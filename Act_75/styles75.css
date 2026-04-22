@@ -1,0 +1,9 @@
+body {
+  text-align: center;
+  font-size: large;
+}
+
+button,
+input {
+  padding: 5px;
+}

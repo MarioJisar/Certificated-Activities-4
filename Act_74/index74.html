@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Interactivo</title>
+</head>
+
+<body>
+    <p id="primero">Texto original 1</p>
+    <p id="segundo">Texto original 2</p>
+
+    <button id="boton">Cambiar texto</button>
+
+    <script>
+        document.getElementById("boton").addEventListener("click", function () {
+            let texto = "¡¡¡Bienvenidos!!!";
+
+            let contenido = document.getElementById("primero").innerHTML;
+            console.log("Contenido leído:", contenido);
+
+            document.getElementById("segundo").innerHTML = texto;
+        });
+        
+        // document.getElementById("boton").onclick = function () {
+        //     let texto = "¡¡¡Bienvenidos!!!";
+
+        //     let contenido = document.getElementById("primero").innerHTML;
+        //     console.log("Contenido leído:", contenido);
+
+        //     document.getElementById("segundo").innerHTML = texto;
+        // }
+    </script>
+</body>
+
+</html>

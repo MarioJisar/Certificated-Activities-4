@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="@mjs" />
+    <title>Ejercicio 72 - JavaScript</title>
+    <style>
+        body {
+            margin: 20px;
+        }
+
+        p {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Mini Sudoku 4x4</h1>
+    <p id="matrizInicial"></p>
+    <!-- <h2>Huecos</h2>
+    <p id="huecos"></p> -->
+    <h2>Matriz final</h2>
+    <p id="matrizFinal"></p>
+
+    <script>
+        setTimeout(() => {
+            const matrizInicial = [
+                [1, 0, 3, 4],
+                [3, 4, 0, 2],
+                [2, 1, 4, 0],
+                [0, 3, 2, 1],
+            ];
+
+            let cadenaMatrizInicial = "";
+            let cadenaMatrizFinal = "";
+            let cadenaHueco = "";
+            let row = 0;
+
+            function mostrar() {
+                for (let fila of matrizInicial) {
+                    let col = 0;
+                    for (let columna of fila) {
+                        cadenaMatrizInicial += `${columna} `;
+                        if (columna === 0) {
+                            let nuevo;
+                            do {
+                                nuevo = Number(prompt(`Introduce un número para fila ${row} y columna ${col}:`));
+                            } while (
+                                nuevo != 1 &&
+                                nuevo != 2 &&
+                                nuevo != 3 &&
+                                nuevo != 4
+                            );
+                            fila[col] = nuevo;
+                        }
+                        col++;
+                    }
+                    cadenaMatrizInicial += `<br>`;
+                    row++;
+                }
+            }
+
+            mostrar();
+            document.getElementById("matrizInicial").innerHTML = cadenaMatrizInicial;
+            document.getElementById("huecos").innerHTML = cadenaHueco;
+
+            cadenaMatrizInicial = "";
+
+            //   matrizInicial[0][1] = prompt("Introduce un número para F0 C1:");
+            //   matrizInicial[1][2] = prompt("Introduce un número para F1 C2:");
+            //   matrizInicial[2][3] = prompt("Introduce un número para F2 C3:");
+            //   matrizInicial[3][0] = prompt("Introduce un número para F3 C0:");
+
+            mostrar();
+            document.getElementById("matrizFinal").innerHTML = cadenaMatrizInicial;
+
+        }, 1000);
+    </script>
+</body>
+
+</html>
