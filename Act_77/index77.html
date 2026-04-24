@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 77 - JavaScript</title>
+</head>
+
+<body>
+    <button id="boton_callback">Haga click aquí</button>
+
+    <script>
+        // v1
+        // const boton = document.querySelector("#boton_callback");
+
+        // boton.addEventListener("click", function () {
+        //     console.log("El usuario ha hecho clic en el botón.");
+        // });
+
+        // v2
+        document.querySelector("#boton_callback").addEventListener("click", function () {
+            console.log("El usuario ha hecho clic en el botón.");
+        });
+
+    </script>
+</body>
+
+</html>
