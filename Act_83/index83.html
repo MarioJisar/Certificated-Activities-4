@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 82 - JavaScript</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-size: large;
+            font-family: monospace;
+        }
+
+        p {
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style = "color: blue;">Suma de cuadrados de números</h1>
+
+    <button onclick="cambiarColor()">Cambiar color</button>
+    <p id="resultado"></p>
+    <input type="text" id="nombreIntroducido">
+    <p id="resultadoSaludo"></p>
+    <button onclick="saludo()">Saludar</button>
+
+    <script>
+        const colores = ["red", "grey", "green"];
+        let cont = 0;
+
+        function cambiarColor() {
+            cont++;
+
+            if (cont >= colores.length) cont = 0;
+
+            document.getElementById("resultado").innerHTML = `<p style = "background-color: ${colores[cont]};"></p>`;
+        }
+
+        document.getElementById("resultado").innerHTML = `<p style = "background-color: ${colores[cont]};"></p>`;
+
+        let nombre = document.getElementById("nombreIntroducido");
+        function saludo() {
+            document.getElementById("resultadoSaludo").innerHTML = `Un saludo, ${nombre}`;
+            console.log(`Un saludo, ${nombre}`);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="@mjs">
+    <title>Ejercicio 80 - JavaScript</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-size: large;
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Suma de cuadrados de números</h1>
+    <p id="resultadoArray"></p>
+    <p id="resultadoSuma"></p>
+
+
+    <script>
+        const numeros = [];
+        let resultado = 0;
+
+        for (let cont = 0; cont < 5; cont++) {
+            let numeroAleatorio = Math.floor(Math.random() * 10 + 1);
+            resultado += Math.pow(numeroAleatorio, 2);
+            // resultado += numeros[cont] ** 2;
+            numeros.push(numeroAleatorio);
+        }
+
+        document.getElementById("resultadoArray").innerHTML = `Los números del array son: ${numeros}`;
+
+        document.getElementById("resultadoSuma").innerHTML = `La suma de los cuadrados es: ${resultado}`;
+    </script>
+</body>
+
+</html>
